@@ -1,0 +1,727 @@
+# Tested on Deeptest release 1.10.0
+cbmcArguments:
+  cover-function-only: false
+  depth: false
+  do-not-test-methods-with-access: [ private ]
+  java-generate-no-comments: true
+  no-trivial-tests: true
+phases:
+-
+  timeout: 300
+  cbmcArguments:
+    java-assume-inputs-non-null: true
+    max-nondet-array-length: 10
+    string-non-empty: true
+    unwind: 1
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 300
+  cbmcArguments:
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+units:
+  - target:
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/Version.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/Version.java
+  - target:
+    - dir: barcodes/target/classes
+      file: com/itextpdf/barcodes/qrcode/Version.class
+      sourceDir: barcodes/src/main/java
+      sourceFile: com/itextpdf/barcodes/qrcode/Version.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/AwtImageDataFactory.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/AwtImageDataFactory.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/RootRenderer.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/RootRenderer.java
+    # Child of RootRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/LogMessageConstant.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/LogMessageConstant.java
+    # Child of RootRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/MessageFormatUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/MessageFormatUtil.java
+    # Child of RootRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/geom/Rectangle.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/geom/Rectangle.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LayoutArea.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LayoutArea.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LayoutContext.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LayoutContext.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LayoutPosition.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LayoutPosition.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LayoutResult.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LayoutResult.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/PositionedLayoutContext.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/PositionedLayoutContext.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/RootLayoutArea.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/RootLayoutArea.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/margincollapse/MarginsCollapseHandler.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/margincollapse/MarginsCollapseHandler.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/margincollapse/MarginsCollapseInfo.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/margincollapse/MarginsCollapseInfo.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/ClearPropertyValue.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/ClearPropertyValue.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/Property.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/Property.java
+    # Child of RootRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/tagging/LayoutTaggingHelper.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/tagging/LayoutTaggingHelper.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/TableWidths.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/TableWidths.java
+    # Child of TableWidths.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/ArrayUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/ArrayUtil.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/borders/Border.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/borders/Border.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/Cell.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/Cell.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/Table.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/Table.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/minmaxwidth/MinMaxWidth.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/minmaxwidth/MinMaxWidth.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/minmaxwidth/MinMaxWidthUtils.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/minmaxwidth/MinMaxWidthUtils.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/BorderCollapsePropertyValue.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/BorderCollapsePropertyValue.java
+    # Child of TableWidths.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/UnitValue.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/UnitValue.java
+  - target:
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/parser/HtmlTreeBuilderState.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/parser/HtmlTreeBuilderState.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/helper/StringUtil.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/helper/StringUtil.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/Attribute.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/Attribute.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/Attributes.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/Attributes.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/Document.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/Document.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/DocumentType.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/DocumentType.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/Element.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/Element.java
+    # Child of HtmlTreeBuilderState.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/jsoup/nodes/Node.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/jsoup/nodes/Node.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/JpegImageHelper.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/JpegImageHelper.java
+    # Child of JpegImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/IOException.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/IOException.java
+    # Child of JpegImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/StreamUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/StreamUtil.java
+    # Child of JpegImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/colors/IccProfile.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/colors/IccProfile.java
+  - target:
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/renderers/impl/UseSvgNodeRenderer.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/renderers/impl/UseSvgNodeRenderer.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/geom/AffineTransform.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/geom/AffineTransform.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/geom/NoninvertibleTransformException.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/geom/NoninvertibleTransformException.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/canvas/PdfCanvas.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/canvas/PdfCanvas.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/util/CssUtils.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/util/CssUtils.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/SvgConstants.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/SvgConstants.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/css/impl/SvgNodeRendererInheritanceResolver.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/css/impl/SvgNodeRendererInheritanceResolver.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/exceptions/SvgLogMessageConstant.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/exceptions/SvgLogMessageConstant.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/renderers/ISvgNodeRenderer.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/renderers/ISvgNodeRenderer.java
+    # Child of UseSvgNodeRenderer.class
+    - dir: svg/target/classes
+      file: com/itextpdf/svg/renderers/SvgDrawContext.class
+      sourceDir: svg/src/main/java
+      sourceFile: com/itextpdf/svg/renderers/SvgDrawContext.java
+  - target:
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/selector/CssSelector.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/selector/CssSelector.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/parse/CssSelectorParser.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/parse/CssSelectorParser.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/pseudo/CssPseudoElementNode.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/pseudo/CssPseudoElementNode.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/selector/item/CssPseudoElementSelectorItem.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/selector/item/CssPseudoElementSelectorItem.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/selector/item/CssSeparatorSelectorItem.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/selector/item/CssSeparatorSelectorItem.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/css/selector/item/ICssSelectorItem.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/css/selector/item/ICssSelectorItem.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/node/IElementNode.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/node/IElementNode.java
+    # Child of CssSelector.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/node/INode.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/node/INode.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/TiffImageHelper.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/TiffImageHelper.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/CCITTG4Encoder.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/CCITTG4Encoder.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFConstants.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFConstants.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFDirectory.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFDirectory.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFFaxDecoder.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFFaxDecoder.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFField.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFField.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFLZWDecoder.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFLZWDecoder.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/PdfEncodings.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/PdfEncodings.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/ByteArrayOutputStream.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/ByteArrayOutputStream.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/DeflaterOutputStream.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/DeflaterOutputStream.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/RandomAccessFileOrArray.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/RandomAccessFileOrArray.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/IRandomAccessSource.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/IRandomAccessSource.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/RandomAccessSourceFactory.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/RandomAccessSourceFactory.java
+    # Child of TiffImageHelper.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/FilterUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/FilterUtil.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/TableRenderer.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/TableRenderer.java
+    # Child of TableRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/canvas/CanvasArtifact.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/canvas/CanvasArtifact.java
+    # Child of TableRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/tagging/StandardRoles.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/tagging/StandardRoles.java
+    # Child of TableRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/tagutils/TagTreePointer.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/tagutils/TagTreePointer.java
+    # Child of TableRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/Div.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/Div.java
+    # Child of TableRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/IElement.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/IElement.java
+    # Child of TableRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/CaptionSide.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/CaptionSide.java
+    # Child of TableRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/FloatPropertyValue.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/FloatPropertyValue.java
+    # Child of TableRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/VerticalAlignment.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/VerticalAlignment.java
+  - target:
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/xmp/impl/Latin1Converter.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/xmp/impl/Latin1Converter.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/BmpImageHelper.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/BmpImageHelper.java
+  - target:
+    - dir: barcodes/target/classes
+      file: com/itextpdf/barcodes/qrcode/MaskUtil.class
+      sourceDir: barcodes/src/main/java
+      sourceFile: com/itextpdf/barcodes/qrcode/MaskUtil.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/LineRenderer.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/LineRenderer.java
+    # Child of LineRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/otf/Glyph.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/otf/Glyph.java
+    # Child of LineRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/otf/GlyphLine.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/otf/GlyphLine.java
+    # Child of LineRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/TextUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/TextUtil.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/TabStop.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/TabStop.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LineLayoutContext.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LineLayoutContext.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/LineLayoutResult.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/LineLayoutResult.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/MinMaxWidthLayoutResult.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/MinMaxWidthLayoutResult.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/layout/TextLayoutResult.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/layout/TextLayoutResult.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/BaseDirection.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/BaseDirection.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/Leading.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/Leading.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/OverflowPropertyValue.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/OverflowPropertyValue.java
+    # Child of LineRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/TabAlignment.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/TabAlignment.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/TextRenderer.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/TextRenderer.java
+    # Child of TextRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/FontMetrics.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/FontMetrics.java
+    # Child of TextRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/FontProgram.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/FontProgram.java
+    # Child of TextRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/font/TrueTypeFont.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/font/TrueTypeFont.java
+    # Child of TextRenderer.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/util/EnumUtil.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/util/EnumUtil.java
+    # Child of TextRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/PdfException.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/PdfException.java
+    # Child of TextRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/colors/Color.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/colors/Color.java
+    # Child of TextRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/font/PdfFont.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/font/PdfFont.java
+    # Child of TextRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/font/PdfType0Font.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/font/PdfType0Font.java
+    # Child of TextRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/canvas/PdfCanvasConstants.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/canvas/PdfCanvasConstants.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/Text.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/Text.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/font/FontCharacteristics.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/font/FontCharacteristics.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/font/FontFamilySplitter.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/font/FontFamilySplitter.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/font/FontProvider.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/font/FontProvider.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/font/FontSelectorStrategy.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/font/FontSelectorStrategy.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/font/FontSet.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/font/FontSet.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/hyphenation/Hyphenation.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/hyphenation/Hyphenation.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/hyphenation/HyphenationConfig.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/hyphenation/HyphenationConfig.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/Background.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/Background.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/FontKerning.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/FontKerning.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/TransparentColor.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/TransparentColor.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/Underline.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/Underline.java
+    # Child of TextRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/splitting/ISplitCharacters.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/splitting/ISplitCharacters.java
+  - target:
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/renderer/ListItemRenderer.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/renderer/ListItemRenderer.java
+    # Child of ListItemRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/colors/ColorConstants.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/colors/ColorConstants.java
+    # Child of ListItemRenderer.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/geom/Line.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/geom/Line.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/borders/SolidBorder.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/borders/SolidBorder.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/ListItem.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/ListItem.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/element/Paragraph.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/element/Paragraph.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/ListSymbolAlignment.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/ListSymbolAlignment.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/property/ListSymbolPosition.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/property/ListSymbolPosition.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/tagging/TaggingDummyElement.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/tagging/TaggingDummyElement.java
+    # Child of ListItemRenderer.class
+    - dir: layout/target/classes
+      file: com/itextpdf/layout/tagging/TaggingHintKey.class
+      sourceDir: layout/src/main/java
+      sourceFile: com/itextpdf/layout/tagging/TaggingHintKey.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/source/PdfTokenizer.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/source/PdfTokenizer.java
+  - target:
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/resolver/resource/UriEncodeUtil.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/resolver/resource/UriEncodeUtil.java
+    # Child of UriEncodeUtil.class
+    - dir: styled-xml-parser/target/classes
+      file: com/itextpdf/styledxmlparser/exceptions/StyledXMLParserException.class
+      sourceDir: styled-xml-parser/src/main/java
+      sourceFile: com/itextpdf/styledxmlparser/exceptions/StyledXMLParserException.java
+  - target:
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/codec/TIFFFaxDecompressor.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/codec/TIFFFaxDecompressor.java
+  - target:
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/canvas/wmf/MetaDo.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/canvas/wmf/MetaDo.java
+    # Child of MetaDo.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/ImageData.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/ImageData.java
+    # Child of MetaDo.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/ImageDataFactory.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/ImageDataFactory.java
+    # Child of MetaDo.class
+    - dir: 
+      file: io/target/classes/com/itextpdf/io/image/ImageType.class
+      sourceDir: 
+      sourceFile: io/src/main/java/com/itextpdf/io/image/ImageType.java
+    # Child of MetaDo.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/font/PdfFontFactory.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/font/PdfFontFactory.java
+    # Child of MetaDo.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/geom/Point.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/geom/Point.java
+    # Child of MetaDo.class
+    - dir: kernel/target/classes
+      file: com/itextpdf/kernel/pdf/xobject/PdfImageXObject.class
+      sourceDir: kernel/src/main/java
+      sourceFile: com/itextpdf/kernel/pdf/xobject/PdfImageXObject.java
